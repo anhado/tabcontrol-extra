@@ -3,75 +3,75 @@
  * See http://www.codeproject.com/info/cpol10.aspx for details
  */
 
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace TradeWright.UI.Forms
 {
-
-    [System.ComponentModel.ToolboxItem(false)]
+    [ToolboxItem(false)]
     public class TabStyleVS2012Provider : TabStyleRoundedProvider
     {
-        public TabStyleVS2012Provider(TabControlExtra tabControl) : base(tabControl) {
-            this.Radius = 3;
-            this.ShowTabCloser = true;
+        public TabStyleVS2012Provider(TabControlExtra tabControl) : base(tabControl)
+        {
+            Radius        = 3;
+            ShowTabCloser = true;
 
-            this.CloserColorFocused = Color.FromArgb(117, 99, 61);
-            this.CloserColorFocusedActive = Color.Black;
-            this.CloserColorSelected = Color.FromArgb(95, 102, 115);
-            this.CloserColorSelectedActive = Color.Black;
-            this.CloserColorHighlighted = Color.FromArgb(206, 212, 221);
-            this.CloserColorHighlightedActive = Color.Black;
-            this.CloserColorUnselected = Color.Empty;
+            CloserColorFocused           = Color.FromArgb(117, 99, 61);
+            CloserColorFocusedActive     = Color.Black;
+            CloserColorSelected          = Color.FromArgb(95, 102, 115);
+            CloserColorSelectedActive    = Color.Black;
+            CloserColorHighlighted       = Color.FromArgb(206, 212, 221);
+            CloserColorHighlightedActive = Color.Black;
+            CloserColorUnselected        = Color.Empty;
 
-            this.CloserButtonFillColorFocused = Color.Empty;
-            this.CloserButtonFillColorFocusedActive = Color.White;
-            this.CloserButtonFillColorSelected = Color.Empty;
-            this.CloserButtonFillColorSelectedActive = Color.White;
-            this.CloserButtonFillColorHighlighted = Color.Empty;
-            this.CloserButtonFillColorHighlightedActive = Color.White;
-            this.CloserButtonFillColorUnselected = Color.Empty;
+            CloserButtonFillColorFocused           = Color.Empty;
+            CloserButtonFillColorFocusedActive     = Color.White;
+            CloserButtonFillColorSelected          = Color.Empty;
+            CloserButtonFillColorSelectedActive    = Color.White;
+            CloserButtonFillColorHighlighted       = Color.Empty;
+            CloserButtonFillColorHighlightedActive = Color.White;
+            CloserButtonFillColorUnselected        = Color.Empty;
 
-            this.CloserButtonOutlineColorFocused = Color.Empty;
-            this.CloserButtonOutlineColorFocusedActive = Color.FromArgb(229, 195, 101);
-            this.CloserButtonOutlineColorSelected = Color.Empty;
-            this.CloserButtonOutlineColorSelectedActive = Color.FromArgb(229, 195, 101);
-            this.CloserButtonOutlineColorHighlighted = Color.Empty;
-            this.CloserButtonOutlineColorHighlightedActive = Color.FromArgb(229, 195, 101);
-            this.CloserButtonOutlineColorUnselected = Color.Empty;
+            CloserButtonOutlineColorFocused           = Color.Empty;
+            CloserButtonOutlineColorFocusedActive     = Color.FromArgb(229, 195, 101);
+            CloserButtonOutlineColorSelected          = Color.Empty;
+            CloserButtonOutlineColorSelectedActive    = Color.FromArgb(229, 195, 101);
+            CloserButtonOutlineColorHighlighted       = Color.Empty;
+            CloserButtonOutlineColorHighlightedActive = Color.FromArgb(229, 195, 101);
+            CloserButtonOutlineColorUnselected        = Color.Empty;
 
-            this.TextColorUnselected = Color.White;
-            this.TextColorDisabled = Color.WhiteSmoke;
-            this.BorderColorDisabled = Color.FromArgb(41, 57, 85);
-            this.BorderColorFocused = Color.FromArgb(255, 243, 205);
-            this.BorderColorHighlighted = Color.FromArgb(155, 167, 183);
-            this.BorderColorSelected = Color.FromArgb(206, 212, 223);
-            this.BorderColorUnselected = Color.Transparent;
+            TextColorUnselected    = Color.White;
+            TextColorDisabled      = Color.WhiteSmoke;
+            BorderColorDisabled    = Color.FromArgb(41,  57,  85);
+            BorderColorFocused     = Color.FromArgb(255, 243, 205);
+            BorderColorHighlighted = Color.FromArgb(155, 167, 183);
+            BorderColorSelected    = Color.FromArgb(206, 212, 223);
+            BorderColorUnselected  = Color.Transparent;
 
-            this.PageBackgroundColorDisabled = Color.FromArgb(41, 57, 85);
-            this.PageBackgroundColorFocused = Color.FromArgb(255, 243, 205);
-            this.PageBackgroundColorHighlighted = Color.FromArgb(75, 92, 116);
-            this.PageBackgroundColorSelected = Color.FromArgb(206, 212, 223);
+            PageBackgroundColorDisabled    = Color.FromArgb(41,  57,  85);
+            PageBackgroundColorFocused     = Color.FromArgb(255, 243, 205);
+            PageBackgroundColorHighlighted = Color.FromArgb(75,  92,  116);
+            PageBackgroundColorSelected    = Color.FromArgb(206, 212, 223);
             //this.PageBackgroundColorUnselected = Color.FromArgb(41, 57, 85);
-            this.PageBackgroundColorUnselected = Color.Transparent;
+            PageBackgroundColorUnselected = Color.Transparent;
 
-            this.TabColorDisabled1 = this.PageBackgroundColorDisabled;
-            this.TabColorDisabled2 = this.TabColorDisabled1;
-            this.TabColorFocused1 = this.PageBackgroundColorFocused;
-            this.TabColorFocused2 = this.TabColorFocused1;
-            this.TabColorHighLighted1 = this.PageBackgroundColorHighlighted;
-            this.TabColorHighLighted2 = this.TabColorHighLighted1;
-            this.TabColorSelected1 = this.PageBackgroundColorSelected;
-            this.TabColorSelected2 = this.TabColorSelected1;
-            this.TabColorUnSelected1 = Color.Transparent;
-            this.TabColorUnSelected1 = Color.Transparent;
+            TabColorDisabled1    = PageBackgroundColorDisabled;
+            TabColorDisabled2    = TabColorDisabled1;
+            TabColorFocused1     = PageBackgroundColorFocused;
+            TabColorFocused2     = TabColorFocused1;
+            TabColorHighLighted1 = PageBackgroundColorHighlighted;
+            TabColorHighLighted2 = TabColorHighLighted1;
+            TabColorSelected1    = PageBackgroundColorSelected;
+            TabColorSelected2    = TabColorSelected1;
+            TabColorUnSelected1  = Color.Transparent;
+            TabColorUnSelected1  = Color.Transparent;
 
             //	Must set after the _Radius as this is used in the calculations of the actual padding
-            this.Padding = new Point(6, 5);
+            Padding = new Point(6, 5);
 
-            this.TabPageMargin = new Padding(0, 4, 0, 4);
-            this.TabPageRadius = 2;
-
+            TabPageMargin = new Padding(0, 4, 0, 4);
+            TabPageRadius = 2;
         }
     }
 }

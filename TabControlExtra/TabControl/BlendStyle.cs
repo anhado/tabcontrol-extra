@@ -3,12 +3,11 @@
  * See http://www.codeproject.com/info/cpol10.aspx for details
  */
 
-using System.Windows.Forms;
-
-namespace TradeWright.UI.Forms {
-    public enum BlendStyle {
+namespace TradeWright.UI.Forms
+{
+    public enum BlendStyle
+    {
         Normal = 0,
-        Glass = 1
+        Glass  = 1
     }
-
 }

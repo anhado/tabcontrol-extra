@@ -1,88 +1,81 @@
 ﻿/*
  * This code is provided under the Code Project Open Licence (CPOL)
  * See http://www.codeproject.com/info/cpol10.aspx for details
-*/
+ */
 
-using System.Drawing;
+using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
 namespace System.Drawing
 {
+    internal sealed class ThemedColors
+    {
+        public enum ColorScheme
+        {
+            NormalColor = 0,
+            HomeStead   = 1,
+            Metallic    = 2,
+            NoTheme     = 3
+        }
 
-	internal sealed class ThemedColors
-	{
+        private static ColorScheme GetCurrentThemeIndex()
+        {
+            ColorScheme theme = ColorScheme.NoTheme;
 
-		#region "    Variables and Constants "
+            if (VisualStyleInformation.IsSupportedByOS && VisualStyleInformation.IsEnabledByUser && Application.RenderWithVisualStyles)
+                switch (VisualStyleInformation.ColorScheme)
+                {
+                    case NormalColor:
+                        theme = ColorScheme.NormalColor;
+                        break;
+                    case HomeStead:
+                        theme = ColorScheme.HomeStead;
+                        break;
+                    case Metallic:
+                        theme = ColorScheme.Metallic;
+                        break;
+                    default:
+                        theme = ColorScheme.NoTheme;
+                        break;
+                }
 
-		private const string NormalColor = "NormalColor";
-		private const string HomeStead = "HomeStead";
-		private const string Metallic = "Metallic";
-		private const string NoTheme = "NoTheme";
+            return theme;
+        }
 
-		private static Color[] _toolBorder;
-		#endregion
+        #region "    Variables and Constants "
 
-		#region "    Properties "
+        private const string NormalColor = "NormalColor";
+        private const string HomeStead   = "HomeStead";
+        private const string Metallic    = "Metallic";
+        private const string NoTheme     = "NoTheme";
 
-		[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-		public static ColorScheme CurrentThemeIndex {
-			get { return ThemedColors.GetCurrentThemeIndex(); }
-		}
+        private static readonly Color[] _toolBorder;
 
-		[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-		public static Color ToolBorder {
-			get { return ThemedColors._toolBorder[(int)ThemedColors.CurrentThemeIndex]; }
-		}
+        #endregion
 
-		#endregion
+        #region "    Properties "
 
-		#region "    Constructors "
+        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        public static ColorScheme CurrentThemeIndex => GetCurrentThemeIndex();
 
-		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline")]
-		static ThemedColors() {
-			ThemedColors._toolBorder = new Color[] {Color.FromArgb(127, 157, 185), Color.FromArgb(164, 185, 127), Color.FromArgb(165, 172, 178), Color.FromArgb(132, 130, 132)};
-		}
+        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        public static Color ToolBorder => _toolBorder[(int)CurrentThemeIndex];
 
-		private ThemedColors(){}
+        #endregion
 
-		#endregion
+        #region "    Constructors "
 
-		private static ColorScheme GetCurrentThemeIndex()
-		{
-			ColorScheme theme = ColorScheme.NoTheme;
+        [SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline")]
+        static ThemedColors()
+        {
+            _toolBorder = new[] { Color.FromArgb(127, 157, 185), Color.FromArgb(164, 185, 127), Color.FromArgb(165, 172, 178), Color.FromArgb(132, 130, 132) };
+        }
 
-			if (VisualStyleInformation.IsSupportedByOS && VisualStyleInformation.IsEnabledByUser && Application.RenderWithVisualStyles)
-			{
+        private ThemedColors()
+        {
+        }
 
-
-				switch (VisualStyleInformation.ColorScheme) {
-					case NormalColor:
-						theme = ColorScheme.NormalColor;
-						break;
-					case HomeStead:
-						theme = ColorScheme.HomeStead;
-						break;
-					case Metallic:
-						theme = ColorScheme.Metallic;
-						break;
-					default:
-						theme = ColorScheme.NoTheme;
-						break;
-				}
-			}
-
-			return theme;
-		}
-
-		public  enum ColorScheme
-		{
-			NormalColor = 0,
-			HomeStead = 1,
-			Metallic = 2,
-			NoTheme = 3
-		}
-
-	}
-
+        #endregion
+    }
 }

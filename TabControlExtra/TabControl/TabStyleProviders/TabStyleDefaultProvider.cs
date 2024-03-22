@@ -3,27 +3,24 @@
  * See http://www.codeproject.com/info/cpol10.aspx for details
  */
 
-using System;
+using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Windows.Forms;
 
-namespace TradeWright.UI.Forms 
+namespace TradeWright.UI.Forms
 {
+    [ToolboxItem(false)]
+    public class TabStyleDefaultProvider : TabStyleProvider
+    {
+        public TabStyleDefaultProvider(TabControlExtra tabControl) : base(tabControl)
+        {
+            Radius = 2;
 
-	[System.ComponentModel.ToolboxItem(false)]
-	public class TabStyleDefaultProvider : TabStyleProvider
-	{
-		public TabStyleDefaultProvider(TabControlExtra tabControl) : base(tabControl){
-			this.Radius = 2;
+            SelectedTabIsLarger = true;
 
-            this.SelectedTabIsLarger = true;
+            TabColorHighLighted1 = Color.FromArgb(236, 244, 252);
+            TabColorHighLighted2 = Color.FromArgb(221, 237, 252);
 
-            this.TabColorHighLighted1 = Color.FromArgb(236, 244, 252);
-            this.TabColorHighLighted2 = Color.FromArgb(221, 237, 252);
-
-            this.PageBackgroundColorHighlighted = TabColorHighLighted1;
+            PageBackgroundColorHighlighted = TabColorHighLighted1;
         }
-		
-	}
+    }
 }

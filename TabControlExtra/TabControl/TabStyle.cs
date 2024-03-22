@@ -3,21 +3,19 @@
  * See http://www.codeproject.com/info/cpol10.aspx for details
  */
 
-using System.Windows.Forms;
-
-namespace TradeWright.UI.Forms 
+namespace TradeWright.UI.Forms
 {
-	public enum TabStyle{
-		None = 0,
-		Default = 1,
-		VisualStudio = 2,
-		Rounded = 3,
-		Angled = 4,
-		Chrome = 5,
-		IE8 = 6,
-		VS2010 = 7, 
-        Rectangular = 8,
-        VS2012 = 9
-	}
-
+    public enum TabStyle
+    {
+        None         = 0,
+        Default      = 1,
+        VisualStudio = 2,
+        Rounded      = 3,
+        Angled       = 4,
+        Chrome       = 5,
+        IE8          = 6,
+        VS2010       = 7,
+        Rectangular  = 8,
+        VS2012       = 9
+    }
 }
