@@ -9,11 +9,11 @@ using System.Runtime.InteropServices;
 
 namespace TradeWright.UI.Forms
 {
-	/// <summary>
-	///     See
-	///     https://docs.microsoft.com/en-gb/visualstudio/code-quality/ca1060-move-p-invokes-to-nativemethods-class?view=vs-2017
-	/// </summary>
-	internal sealed class NativeMethods
+    /// <summary>
+    ///     See
+    ///     https://docs.microsoft.com/en-gb/visualstudio/code-quality/ca1060-move-p-invokes-to-nativemethods-class?view=vs-2017
+    /// </summary>
+    internal sealed class NativeMethods
     {
         private NativeMethods()
         {
